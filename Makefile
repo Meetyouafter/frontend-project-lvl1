@@ -12,3 +12,6 @@ lint: #запуск линтера
 
 brain-even: #для запуска игры
 	node bin/brain-even.js
+
+brain-calc: #для запуска игры
+	node bin/brain-calc.js

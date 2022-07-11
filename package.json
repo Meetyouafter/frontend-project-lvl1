@@ -19,7 +19,8 @@
   "homepage": "https://github.com/Meetyouafter/frontend-project-lvl1#readme",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "dependencies": {
     "eslint-config-airbnb": "^19.0.4",
