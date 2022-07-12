@@ -20,12 +20,13 @@ if (randomSign === '+') {
     result = randomNumber1 * randomNumber2
 }
 
-let answer = readlineSync.question(`What is the result of the expression?\nQuestion: ${randomNumber1} ${randomSign} ${randomNumber2}\n`)
+let answer = i === 0 ? readlineSync.question(`What is the result of the expression?\nQuestion: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `) : readlineSync.question(`Question: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `)
 if (answer != result) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.`)
 break
 } else {
-    console.log(`Your answer: ${answer}\nCorrect!`)
+    console.log(`Correct!`)
 }
+if (i === 2)
 console.log(`Congratulations, ${userName}!`)
 }
