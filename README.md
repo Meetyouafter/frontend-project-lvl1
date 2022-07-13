@@ -3,4 +3,17 @@
 
 <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ec66220f3b2c01bb4da/maintainability" /></a>
 
-https://asciinema.org/connect/48b2efeb-98ed-4684-88ed-3b16f62a71a5
+asciinema for brain-even
+https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg
+
+asciinema for brain-calc
+https://asciinema.org/a/9KuG3siDX0XA7N1Xs6XMnHWuk
+
+asciinema for brain-gsd
+https://asciinema.org/a/xOEcC58aBLFdiAk2thYj4cnY1
+
+asciinema for brain-prime
+https://asciinema.org/a/7wb5derCRVAYsNcHlzvzXUgw2
+
+asciinema for brain-progression
+https://asciinema.org/a/1Fx27Vn0gTzrq9kNYZp9AJkg9
