@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-unused-vars */
+/* eslint-disable import/extensions */
 
-import { hello } from '../src/cli.js';
-import { userName } from '../src/cli.js';
+import { hello, userName } from '../src/cli.js';
