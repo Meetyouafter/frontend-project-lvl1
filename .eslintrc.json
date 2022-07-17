@@ -25,7 +25,9 @@
 
     "rules": {
         "no-console": "off",
-        "no-duplicate-imports": "off"
+        "eqeqeq": "off",
+        "import/extensions": "off",
+        "no-param-reassign":"off"
         
 
     }
