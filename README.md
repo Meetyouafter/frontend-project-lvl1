@@ -4,7 +4,7 @@
 <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ec66220f3b2c01bb4da/maintainability" /></a>
 
 asciinema for brain-even
-https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg
+<asciinema-player src="https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg" poster="npt:2:34"></asciinema-player>
 
 asciinema for brain-calc
 https://asciinema.org/a/9KuG3siDX0XA7N1Xs6XMnHWuk
