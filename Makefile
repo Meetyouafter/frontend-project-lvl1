@@ -10,17 +10,17 @@ publish: #очистка общего хранилища от учебных п�
 lint: #запуск линтера
 	npx eslint
 
-brain-even: #для запуска игры
+brain-even: 
 	node bin/brain-even.js
 
-brain-calc: #для запуска игры
+brain-calc: 
 	node bin/brain-calc.js
 
-brain-gsd: #для запуска игры
+brain-gsd: 
 	node bin/brain-gsd.js
 
-brain-prime: #для запуска игры
+brain-prime:
 	node bin/brain-prime.js
 
-brain-progression: #для запуска игры
+brain-progression: 
 	node bin/brain-progression.js

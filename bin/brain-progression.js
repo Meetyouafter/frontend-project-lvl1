@@ -1,7 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable eqeqeq */
-/* eslint-disable no-shadow */
-/* eslint-disable import/extensions */
 
 import readlineSync from 'readline-sync';
 import { userName } from '../src/cli.js';
@@ -15,7 +12,7 @@ for (let i = 0; i < 3; i += 1) {
   let argument = 0;
 
   const sequenceSum = (randomNumber1, endOfProgression, randomNumber2) => {
-    for (let i = randomNumber1; i <= endOfProgression; i += randomNumber2) sum.push(i);
+    for (let j = randomNumber1; j <= endOfProgression; j += randomNumber2) sum.push(j);
     argument = sum[mask];
     sum[mask] = '..';
     return sum;

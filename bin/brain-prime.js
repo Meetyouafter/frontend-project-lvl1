@@ -1,6 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-unused-expressions */
-/* eslint-disable import/extensions */
 
 import readlineSync from 'readline-sync';
 import { userName } from '../src/cli.js';
