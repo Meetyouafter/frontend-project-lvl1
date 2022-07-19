@@ -7,6 +7,12 @@ asciinema for brain-even
 <asciinema-player src="https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg" poster="npt:2:34"></asciinema-player>
 https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg
 
+<a href="https://asciinema.org/a/508363" target="_blank"><img src="https://asciinema.org/a/508363.svg" /></a>
+
+[![asciicast](https://asciinema.org/a/508363.svg)](https://asciinema.org/a/508363)
+
+<script id="asciicast-508363" src="https://asciinema.org/a/508363.js" async></script>
+
 asciinema for brain-calc
 https://asciinema.org/a/9KuG3siDX0XA7N1Xs6XMnHWuk
 
