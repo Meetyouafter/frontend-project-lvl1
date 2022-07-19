@@ -9,6 +9,7 @@ const foo = () => {
     const endOfProgression = randomNumber1 + stepForProgression(5, 10) * randomNumber2;
     const mask = Math.floor(Math.random() * stepForProgression(5, 10));
     let result = 0;
+    const startQuestion = 'What number is missing in the progression?\nQuestion: ';
 
     const sequenceSum = (firstNumber, lastNumber, step) => {
       const sum = [];
@@ -20,7 +21,7 @@ const foo = () => {
       return sum;
     };
 
-    const answer = i === 0 ? readlineSync.question(`What number is missing in the progression?\nQuestion: ${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `) : readlineSync.question(`Question: ${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `);
+    const answer = i === 0 ? readlineSync.question(`${startQuestion}${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `) : readlineSync.question(`Question: ${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `);
 
     if (answer != result) {
       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
