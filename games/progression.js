@@ -22,9 +22,10 @@ const foo = () => {
     };
 
     const answer = i === 0 ? readlineSync.question(`${startQuestion}${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `) : readlineSync.question(`Question: ${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `);
+    const trueTypeOfAnswer = Number(answer);
 
-    if (answer != result) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
+    if (trueTypeOfAnswer !== result) {
+      console.log(`'${trueTypeOfAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
       break;
     } else {
       console.log('Correct!');

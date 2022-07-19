@@ -3,6 +3,9 @@
 
 <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ec66220f3b2c01bb4da/maintainability" /></a>
 
+asciinema for brain-games
+<a href="https://asciinema.org/a/dFWCiV8mGWPnBXxLuTAB8rVth" target="_blank"><img src="https://asciinema.org/a/dFWCiV8mGWPnBXxLuTAB8rVth.svg" /></a>
+
 asciinema for brain-even
 <a href="https://asciinema.org/a/Gjddi2jo9EUg68IyWamKitilp" target="_blank"><img src="https://asciinema.org/a/Gjddi2jo9EUg68IyWamKitilp.svg" /></a>
 

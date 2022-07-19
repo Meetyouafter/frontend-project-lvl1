@@ -19,8 +19,9 @@ const foo = () => {
     }
 
     const answer = i === 0 ? readlineSync.question(`What is the result of the expression?\nQuestion: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `) : readlineSync.question(`Question: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `);
-    if (answer != result) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
+    const trueTypeOfAnswer = Number(answer);
+    if (trueTypeOfAnswer !== result) {
+      console.log(`'${trueTypeOfAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
       break;
     } else {
       console.log('Correct!');
