@@ -7,7 +7,7 @@ const foo = () => {
     const randomNumber2 = Math.floor(Math.random() * 10);
     const stepForProgression = (min, max) => Math.floor(Math.random() * (max - min)) + min;
     const endOfProgression = randomNumber1 + stepForProgression(5, 10) * randomNumber2;
-    const mask = Math.floor(Math.random() * stepForProgression(5, 10));
+    const mask = Math.floor(Math.random() * (stepForProgression(5, 10) - 1));
     let result = 0;
     const startQuestion = 'What number is missing in the progression?\nQuestion: ';
 

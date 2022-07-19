@@ -4,23 +4,16 @@
 <a href="https://codeclimate.com/github/Meetyouafter/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/6ec66220f3b2c01bb4da/maintainability" /></a>
 
 asciinema for brain-even
-<asciinema-player src="https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg" poster="npt:2:34"></asciinema-player>
-https://asciinema.org/a/t3f0gl7gRMKWAziOMzb3W7MMg
-
-<a href="https://asciinema.org/a/508363" target="_blank"><img src="https://asciinema.org/a/508363.svg" /></a>
-
-[![asciicast](https://asciinema.org/a/508363.svg)](https://asciinema.org/a/508363)
-
-<script id="asciicast-508363" src="https://asciinema.org/a/508363.js" async></script>
+<a href="https://asciinema.org/a/Gjddi2jo9EUg68IyWamKitilp" target="_blank"><img src="https://asciinema.org/a/Gjddi2jo9EUg68IyWamKitilp.svg" /></a>
 
 asciinema for brain-calc
-https://asciinema.org/a/9KuG3siDX0XA7N1Xs6XMnHWuk
+<a href="https://asciinema.org/a/HE6pMAlfIY9zcdqQSkeB7FK9w" target="_blank"><img src="https://asciinema.org/a/HE6pMAlfIY9zcdqQSkeB7FK9w.svg" /></a>
 
 asciinema for brain-gsd
-https://asciinema.org/a/xOEcC58aBLFdiAk2thYj4cnY1
+<a href="https://asciinema.org/a/XzpzEEOoJSbM04Z5acki97zGq" target="_blank"><img src="https://asciinema.org/a/XzpzEEOoJSbM04Z5acki97zGq.svg" /></a>
 
 asciinema for brain-prime
-https://asciinema.org/a/7wb5derCRVAYsNcHlzvzXUgw2
+<a href="https://asciinema.org/a/iYwzkVPtMH5MDop10VyKl5fMa" target="_blank"><img src="https://asciinema.org/a/iYwzkVPtMH5MDop10VyKl5fMa.svg" /></a>
 
 asciinema for brain-progression
-https://asciinema.org/a/1Fx27Vn0gTzrq9kNYZp9AJkg9
+<a href="https://asciinema.org/a/Ov4idesHSLBhtFAK7TFWcrLUK" target="_blank"><img src="https://asciinema.org/a/Ov4idesHSLBhtFAK7TFWcrLUK.svg" /></a>
