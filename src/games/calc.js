@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName } from '../src/cli.js';
+import { userName } from '../cli.js';
 
 const foo = () => {
   for (let i = 0; i < 3; i += 1) {
