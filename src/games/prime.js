@@ -13,7 +13,7 @@ const foo = () => {
       }
     }
 
-    const answer = readlineSync.question(`Answer "yes" if given number is prime. Otherwise answer "no".\nQuestion: ${randomNumber}\nYour answer: `);
+    const answer = j === 0 ? readlineSync.question(`Answer "yes" if given number is prime. Otherwise answer "no".\nQuestion: ${randomNumber}\nYour answer: `) : readlineSync.question(`Question: ${randomNumber}\nYour answer: `);
     if (answer === 'no' && prime === true) {
       console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName}!`);
       break;
