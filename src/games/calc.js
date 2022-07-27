@@ -1,34 +1,31 @@
-import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
+import engine from '../engine.js';
+import getRandomNumber from '../helper.js';
 
-const foo = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const mathSign = ['+', '-', '*'];
-    const random = Math.floor(Math.random() * 3);
-    const randomSign = mathSign[random];
-    let result = 0;
-    const randomNumber1 = Math.floor(Math.random() * 10);
-    const randomNumber2 = Math.floor(Math.random() * 10);
+const descriptoin = 'What is the result of the expression?';
 
-    if (randomSign === '+') {
-      result = randomNumber1 + randomNumber2;
-    } else if (randomSign === '-') {
-      result = randomNumber1 - randomNumber2;
-    } else if (randomSign === '*') {
-      result = randomNumber1 * randomNumber2;
-    }
-
-    const answer = i === 0 ? readlineSync.question(`What is the result of the expression?\nQuestion: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `) : readlineSync.question(`Question: ${randomNumber1} ${randomSign} ${randomNumber2}\nYour answer: `);
-    const trueTypeOfAnswer = Number(answer);
-    if (trueTypeOfAnswer !== result) {
-      console.log(`'${trueTypeOfAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
-      break;
-    } else {
-      console.log('Correct!');
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}!`);
-    }
+const calculator = (firstNumber, secondNumber, mathSign) => {
+  if (mathSign === '+') {
+    return firstNumber + secondNumber;
+  } if (mathSign === '-') {
+    return firstNumber - secondNumber;
+  } if (mathSign === '*') {
+    return firstNumber * secondNumber;
   }
+  return 'It is wrong';
 };
-export default foo;
+
+const gameFunction = () => {
+  const mathSign = ['+', '-', '*'];
+  const randomMathSign = mathSign[getRandomNumber(0, 2)];
+  const numberOne = getRandomNumber(0, 10);
+  const numberTwo = getRandomNumber(0, 10);
+  const question = `${numberOne} ${randomMathSign} ${numberTwo}`;
+  const rightAnswer = String(calculator(numberOne, numberTwo, randomMathSign));
+  return [question, rightAnswer];
+};
+
+const calculatorGame = () => {
+  engine(descriptoin, gameFunction);
+};
+
+export default calculatorGame;

@@ -1,38 +1,33 @@
-import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
+import engine from '../engine.js';
+import getRandomNumber from '../helper.js';
 
-const foo = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber1 = Math.floor(Math.random() * 10);
-    const randomNumber2 = Math.floor(Math.random() * 10);
-    const stepForProgression = (min, max) => Math.floor(Math.random() * (max - min)) + min;
-    const endOfProgression = randomNumber1 + stepForProgression(5, 10) * randomNumber2;
-    const mask = Math.floor(Math.random() * (stepForProgression(5, 10) - 1));
-    let result = 0;
-    const startQuestion = 'What number is missing in the progression?\nQuestion: ';
-
-    const sequenceSum = (firstNumber, lastNumber, step) => {
-      const sum = [];
-      for (let j = firstNumber; j <= lastNumber; j += step) {
-        sum.push(j);
-      }
-      result = sum[mask];
-      sum[mask] = '..';
-      return sum;
-    };
-
-    const answer = i === 0 ? readlineSync.question(`${startQuestion}${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `) : readlineSync.question(`Question: ${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}\nYour answer: `);
-    const trueTypeOfAnswer = Number(answer);
-
-    if (trueTypeOfAnswer !== result) {
-      console.log(`'${trueTypeOfAnswer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${userName}!`);
-      break;
-    } else {
-      console.log('Correct!');
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}!`);
-    }
+const descriptoin = 'What number is missing in the progression?';
+const mask = Math.floor(Math.random() * (getRandomNumber(5, 10) - 1));
+const sum = [];
+const sequenceSum = (firstNumber, lastNumber, stepForProgression) => {
+  for (let j = firstNumber; j <= lastNumber; j += stepForProgression) {
+    sum.push(j);
   }
+
+  return sum;
 };
-export default foo;
+const result = sequenceSum()[mask];
+console.log(sum);
+console.log(result);
+
+sequenceSum()[mask] = '..';
+
+const gameFunction = () => {
+  const randomNumber1 = getRandomNumber(0, 10);
+  const randomNumber2 = getRandomNumber(0, 10);
+  const endOfProgression = randomNumber1 + getRandomNumber(5, 10) * randomNumber2;
+  const question = `${sequenceSum(randomNumber1, endOfProgression, randomNumber2).join(' ')}`;
+  const rightAnswer = String(result);
+  return [question, rightAnswer];
+};
+
+const progressionGame = () => {
+  engine(descriptoin, gameFunction);
+};
+
+export default progressionGame;

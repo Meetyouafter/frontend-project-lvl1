@@ -1,37 +1,40 @@
-import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
+import engine from '../engine.js';
+import getRandomNumber from '../helper.js';
 
-const foo = () => {
-  for (let i = 0; i < 3; i += 1) {
-    const randomNumber1 = Math.floor(Math.random() * 100);
-    const randomNumber2 = Math.floor(Math.random() * 100);
+const descriptoin = 'Find the greatest common divisor of given numbers.';
 
-    const answer = i === 0 ? readlineSync.question(`Find the greatest common divisor of given numbers.\nQuestion: ${randomNumber1} ${randomNumber2}\nYour answer: `) : readlineSync.question(`Question: ${randomNumber1} ${randomNumber2}\nYour answer: `);
-
-    const qsd = (firstNumber, secondNumber) => {
-      if (firstNumber === 0 || secondNumber === 0) {
-        return 0;
-      }
-
-      while (secondNumber !== 0) {
-        if (firstNumber > secondNumber) {
-          firstNumber -= secondNumber;
-        } else {
-          secondNumber -= firstNumber;
-        }
-      }
-      return firstNumber;
-    };
-    const trueTypeOfAnswer = Number(answer);
-    if (trueTypeOfAnswer !== qsd(randomNumber1, randomNumber2)) {
-      console.log(`'${trueTypeOfAnswer}' is wrong answer ;(. Correct answer was '${qsd(randomNumber1, randomNumber2)}'.\nLet's try again, ${userName}!`);
-      break;
+const gcd = (firstNumber, secondNumber) => {
+  if (firstNumber === 0 || secondNumber === 0) {
+    return 0;
+  }
+  while (secondNumber !== 0) {
+    let firstNumberForWhile = firstNumber;
+    let secondNumberForWhile = secondNumber;
+    if (firstNumberForWhile > secondNumberForWhile) {
+      firstNumberForWhile -= secondNumberForWhile;
     } else {
-      console.log('Correct!');
-    }
-    if (i === 2) {
-      console.log(`Congratulations, ${userName}!`);
+      secondNumberForWhile -= firstNumberForWhile;
     }
   }
+  return firstNumber;
 };
-export default foo;
+
+const gameFunction = () => {
+  const numberOne = getRandomNumber(0, 100);
+  const numberTwo = getRandomNumber(0, 100);
+  const question = `${numberOne}, ${numberTwo}`;
+  const rightAnswer = gcd(numberOne, numberTwo);
+
+  console.log(numberOne);
+  console.log(numberTwo);
+  console.log(question);
+  console.log(rightAnswer);
+
+  return [question, rightAnswer];
+};
+
+const gcdGame = () => {
+  engine(descriptoin, gameFunction);
+};
+
+export default gcdGame;
