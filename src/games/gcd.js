@@ -25,12 +25,6 @@ const gameFunction = () => {
   const numberTwo = getRandomNumber(0, 100);
   const question = `${numberOne}, ${numberTwo}`;
   const rightAnswer = String(gcd(numberOne, numberTwo));
-
-  console.log(numberOne);
-  console.log(numberTwo);
-  console.log(question);
-  console.log(rightAnswer);
-
   return [question, rightAnswer];
 };
 
