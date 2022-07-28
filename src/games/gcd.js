@@ -23,7 +23,7 @@ const gcd = (firstNumber, secondNumber) => {
 const gameFunction = () => {
   const numberOne = getRandomNumber(0, 100);
   const numberTwo = getRandomNumber(0, 100);
-  const question = `${numberOne}, ${numberTwo}`;
+  const question = `${numberOne} ${numberTwo}`;
   const rightAnswer = String(gcd(numberOne, numberTwo));
   return [question, rightAnswer];
 };
