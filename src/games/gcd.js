@@ -7,23 +7,24 @@ const gcd = (firstNumber, secondNumber) => {
   if (firstNumber === 0 || secondNumber === 0) {
     return 0;
   }
-  while (secondNumber !== 0) {
-    let firstNumberForWhile = firstNumber;
-    let secondNumberForWhile = secondNumber;
+  let firstNumberForWhile = firstNumber;
+  let secondNumberForWhile = secondNumber;
+
+  while (secondNumberForWhile !== 0) {
     if (firstNumberForWhile > secondNumberForWhile) {
       firstNumberForWhile -= secondNumberForWhile;
     } else {
       secondNumberForWhile -= firstNumberForWhile;
     }
   }
-  return firstNumber;
+  return firstNumberForWhile;
 };
 
 const gameFunction = () => {
   const numberOne = getRandomNumber(0, 100);
   const numberTwo = getRandomNumber(0, 100);
   const question = `${numberOne}, ${numberTwo}`;
-  const rightAnswer = gcd(numberOne, numberTwo);
+  const rightAnswer = String(gcd(numberOne, numberTwo));
 
   console.log(numberOne);
   console.log(numberTwo);
