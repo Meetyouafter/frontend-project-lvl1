@@ -2,7 +2,6 @@ import engine from '../engine.js';
 import getRandomNumber from '../helper.js';
 
 const descriptoin = 'What number is missing in the progression?';
-
 const sequenceSum = (firstNumber, lastNumber, step) => {
   const sum = [];
   for (let j = firstNumber; j <= lastNumber; j += step) {
