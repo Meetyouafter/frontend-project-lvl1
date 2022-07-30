@@ -4,9 +4,14 @@ import getRandomNumber from '../helper.js';
 const descriptoin = 'Find the greatest common divisor of given numbers.';
 
 const gcd = (firstNumber, secondNumber) => {
-  if (firstNumber === 0 || secondNumber === 0) {
-    return 0;
+  if (firstNumber === 0) {
+    return secondNumber;
   }
+
+  if (secondNumber === 0) {
+    return firstNumber;
+  }
+
   let firstNumberForWhile = firstNumber;
   let secondNumberForWhile = secondNumber;
 
