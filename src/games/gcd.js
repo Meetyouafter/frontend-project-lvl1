@@ -1,40 +1,24 @@
-import engine from '../engine.js';
+import initGame from '../engine.js';
 import getRandomNumber from '../helper.js';
 
-const descriptoin = 'Find the greatest common divisor of given numbers.';
+const description = 'Find the greatest common divisor of given numbers.';
 
-const gcd = (firstNumber, secondNumber) => {
-  if (firstNumber === 0) {
-    return secondNumber;
-  }
-
-  if (secondNumber === 0) {
-    return firstNumber;
-  }
-
-  let firstNumberForWhile = firstNumber;
-  let secondNumberForWhile = secondNumber;
-
-  while (secondNumberForWhile !== 0) {
-    if (firstNumberForWhile > secondNumberForWhile) {
-      firstNumberForWhile -= secondNumberForWhile;
-    } else {
-      secondNumberForWhile -= firstNumberForWhile;
-    }
-  }
-  return firstNumberForWhile;
+const findGcdForTwoNumber = (firstNumber, secondNumber) => {
+  if (secondNumber > firstNumber) return findGcdForTwoNumber(secondNumber, firstNumber);
+  if (!secondNumber) return firstNumber;
+  return findGcdForTwoNumber(secondNumber, firstNumber % secondNumber);
 };
 
-const gameFunction = () => {
-  const numberOne = getRandomNumber(0, 100);
-  const numberTwo = getRandomNumber(0, 100);
-  const question = `${numberOne} ${numberTwo}`;
-  const rightAnswer = String(gcd(numberOne, numberTwo));
+const gameFn = () => {
+  const firstRandomNumber = getRandomNumber(0, 100);
+  const secondRandomNumber = getRandomNumber(0, 100);
+  const question = `${firstRandomNumber} ${secondRandomNumber}`;
+  const rightAnswer = String(findGcdForTwoNumber(firstRandomNumber, secondRandomNumber));
   return [question, rightAnswer];
 };
 
-const gcdGame = () => {
-  engine(descriptoin, gameFunction);
+const startGcdGame = () => {
+  initGame(description, gameFn);
 };
 
-export default gcdGame;
+export default startGcdGame;

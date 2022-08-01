@@ -1,30 +1,35 @@
-import engine from '../engine.js';
+import initGame from '../engine.js';
 import getRandomNumber from '../helper.js';
 
-const descriptoin = 'What number is missing in the progression?';
-const sequenceSum = (firstNumber, lastNumber, step) => {
+const description = 'What number is missing in the progression?';
+
+const getProgression = (length) => {
   const sum = [];
-  for (let j = firstNumber; j <= lastNumber; j += step) {
-    sum.push(j);
+  const firstNumber = getRandomNumber(0, length);
+  const step = getRandomNumber(0, length);
+  const lastNumber = firstNumber + getRandomNumber(5, 10) * step;
+  for (let i = firstNumber; i <= lastNumber; i += step) {
+    sum.push(i);
   }
   return sum;
 };
 
-const gameFunction = () => {
-  const randomNumber1 = getRandomNumber(0, 10);
-  const randomNumber2 = getRandomNumber(0, 10);
-  const endOfProgression = randomNumber1 + getRandomNumber(5, 10) * randomNumber2;
-  const mask = Math.floor(Math.random() * (getRandomNumber(5, 10) - 1));
-  const progression = sequenceSum(randomNumber1, endOfProgression, randomNumber2);
-  const result = progression[mask];
-  progression[mask] = '..';
-  const question = `${progression.join(' ')}`;
-  const rightAnswer = String(result);
+const hideRandomArrayElement = (arr) => {
+  const newArr = [...arr];
+  const index = Math.floor(Math.random() * (getRandomNumber(5, 10) - 1));
+  newArr[index] = '..';
+  return [newArr, String(arr[index])];
+};
+
+const gameFn = () => {
+  const progression = getProgression(getRandomNumber(5, 10));
+  const [progressionWithSecret, rightAnswer] = hideRandomArrayElement(progression);
+  const question = progressionWithSecret.join(' ');
   return [question, rightAnswer];
 };
 
-const progressionGame = () => {
-  engine(descriptoin, gameFunction);
+const startProgressionGame = () => {
+  initGame(description, gameFn);
 };
 
-export default progressionGame;
+export default startProgressionGame;

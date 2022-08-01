@@ -1,26 +1,18 @@
-import engine from '../engine.js';
+import initGame from '../engine.js';
 import getRandomNumber from '../helper.js';
 
-const descriptoin = 'Answer "yes" if the number is even, otherwise answer "no".';
+const description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const even = (number) => {
-  if (number % 2 === 0) {
-    return 'yes';
-  } if (number % 2 !== 0) {
-    return 'no';
-  }
-  return 'It is wrong';
+const isEvenNumber = (randomNumber) => randomNumber % 2 === 0;
+
+const gameFn = () => {
+  const secretNumber = getRandomNumber(0, 100);
+  const rightAnswer = isEvenNumber(secretNumber) ? 'yes' : 'no';
+  return [secretNumber, rightAnswer];
 };
 
-const gameFunction = () => {
-  const randomNumber = getRandomNumber(0, 100);
-  const question = `${randomNumber}`;
-  const rightAnswer = even(randomNumber);
-  return [question, rightAnswer];
+const startEvenGame = () => {
+  initGame(description, gameFn);
 };
 
-const evenGame = () => {
-  engine(descriptoin, gameFunction);
-};
-
-export default evenGame;
+export default startEvenGame;

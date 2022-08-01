@@ -1,31 +1,33 @@
-import engine from '../engine.js';
+import initGame from '../engine.js';
 import getRandomNumber from '../helper.js';
 
-const descriptoin = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const calculator = (firstNumber, secondNumber, mathSign) => {
-  if (mathSign === '+') {
-    return firstNumber + secondNumber;
-  } if (mathSign === '-') {
-    return firstNumber - secondNumber;
-  } if (mathSign === '*') {
-    return firstNumber * secondNumber;
+const getMathSignForCalculatorGame = (firstNumber, secondNumber, mathSign) => {
+  switch (mathSign) {
+    case '+':
+      return firstNumber + secondNumber;
+    case '-':
+      return firstNumber - secondNumber;
+    case '*':
+      return firstNumber * secondNumber;
+    default:
+      return 'It is wrong sign';
   }
-  return 'It is wrong';
 };
 
-const gameFunction = () => {
+const gameFn = () => {
   const mathSign = ['+', '-', '*'];
   const randomMathSign = mathSign[getRandomNumber(0, 2)];
   const numberOne = getRandomNumber(0, 10);
   const numberTwo = getRandomNumber(0, 10);
   const question = `${numberOne} ${randomMathSign} ${numberTwo}`;
-  const rightAnswer = String(calculator(numberOne, numberTwo, randomMathSign));
+  const rightAnswer = String(getMathSignForCalculatorGame(numberOne, numberTwo, randomMathSign));
   return [question, rightAnswer];
 };
 
-const calculatorGame = () => {
-  engine(descriptoin, gameFunction);
+const startCalculatorGame = () => {
+  initGame(description, gameFn);
 };
 
-export default calculatorGame;
+export default startCalculatorGame;
