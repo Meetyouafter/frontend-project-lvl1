@@ -16,7 +16,7 @@ const getProgression = (length) => {
 
 const hideRandomArrayElement = (arr) => {
   const newArr = [...arr];
-  const index = Math.floor(Math.random() * (getRandomNumber(5, 10) - 1));
+  const index = Math.floor(Math.random() * (arr.length - 1));
   newArr[index] = '..';
   return [newArr, String(arr[index])];
 };
