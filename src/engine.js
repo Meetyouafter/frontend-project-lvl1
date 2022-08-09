@@ -21,7 +21,10 @@ const initGame = (description, getLogicAndRulesForGame) => {
       console.log('Correct!');
     }
 
-    if (roundCount === 2) {
+    const lastRound = maxRoundCount - 1;
+    const isLastRound = roundCount === lastRound;
+
+    if (isLastRound) {
       console.log(`Congratulations, ${userName}!`);
     }
   }

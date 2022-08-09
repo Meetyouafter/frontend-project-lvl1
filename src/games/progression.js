@@ -15,12 +15,12 @@ const getProgression = (length) => {
   return sum;
 };
 
-const hideRandomArrayElement = (arr) => {
-  const newArr = [...arr];
-  const index = Math.floor(Math.random() * (arr.length - 1));
-  newArr[index] = '..';
+const hideRandomArrayElement = (progressionArray) => {
+  const progressionArraywithHideElement = [...progressionArray];
+  const index = Math.floor(Math.random() * (progressionArray.length - 1));
+  progressionArraywithHideElement[index] = '..';
 
-  return [newArr, String(arr[index])];
+  return [progressionArraywithHideElement, String(progressionArray[index])];
 };
 
 const getLogicForProgressionGame = () => {

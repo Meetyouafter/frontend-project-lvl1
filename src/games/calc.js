@@ -19,6 +19,7 @@ const executeMathExpression = (firstNumber, secondNumber, mathSign) => {
 const getLogicForCalculatorGame = () => {
   const mathSign = ['+', '-', '*'];
   const randomMathSign = mathSign[getRandomNumber(0, 2)];
+
   const numberOne = getRandomNumber(0, 10);
   const numberTwo = getRandomNumber(0, 10);
 

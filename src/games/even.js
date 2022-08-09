@@ -7,6 +7,7 @@ const isEvenNumber = (randomNumber) => randomNumber % 2 === 0;
 
 const getLogicForEvenGame = () => {
   const secretNumber = getRandomNumber(0, 100);
+
   const rightAnswer = isEvenNumber(secretNumber) ? 'yes' : 'no';
 
   return [secretNumber, rightAnswer];
