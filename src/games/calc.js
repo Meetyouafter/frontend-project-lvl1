@@ -3,7 +3,7 @@ import getRandomNumber from '../helper.js';
 
 const description = 'What is the result of the expression?';
 
-const getMathSignForCalculatorGame = (firstNumber, secondNumber, mathSign) => {
+const executeMathExpression = (firstNumber, secondNumber, mathSign) => {
   switch (mathSign) {
     case '+':
       return firstNumber + secondNumber;
@@ -12,22 +12,24 @@ const getMathSignForCalculatorGame = (firstNumber, secondNumber, mathSign) => {
     case '*':
       return firstNumber * secondNumber;
     default:
-      return 'It is wrong sign';
+      return `${mathSign} - this mathsign doesn't use in this game`;
   }
 };
 
-const gameFn = () => {
+const getLogicForCalculatorGame = () => {
   const mathSign = ['+', '-', '*'];
   const randomMathSign = mathSign[getRandomNumber(0, 2)];
   const numberOne = getRandomNumber(0, 10);
   const numberTwo = getRandomNumber(0, 10);
+
   const question = `${numberOne} ${randomMathSign} ${numberTwo}`;
-  const rightAnswer = String(getMathSignForCalculatorGame(numberOne, numberTwo, randomMathSign));
+  const rightAnswer = String(executeMathExpression(numberOne, numberTwo, randomMathSign));
+
   return [question, rightAnswer];
 };
 
 const startCalculatorGame = () => {
-  initGame(description, gameFn);
+  initGame(description, getLogicForCalculatorGame);
 };
 
 export default startCalculatorGame;

@@ -12,14 +12,15 @@ const isPrimeNumber = (number) => {
   return true;
 };
 
-const gameFn = () => {
+const getLogicForPrimeGame = () => {
   const numberForQuestion = getRandomNumber(0, 100);
   const rightAnswer = isPrimeNumber(numberForQuestion) ? 'yes' : 'no';
+
   return [numberForQuestion, rightAnswer];
 };
 
 const startPrimeGame = () => {
-  initGame(description, gameFn);
+  initGame(description, getLogicForPrimeGame);
 };
 
 export default startPrimeGame;
