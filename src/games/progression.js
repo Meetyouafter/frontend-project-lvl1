@@ -6,7 +6,7 @@ const description = 'What number is missing in the progression?';
 const getProgression = (length) => {
   const sum = [];
   const firstNumber = getRandomNumber(0, length);
-  const step = getRandomNumber(0, length);
+  const step = getRandomNumber(1, length);
   const lastNumber = firstNumber + getRandomNumber(5, 10) * step;
 
   for (let i = firstNumber; i <= lastNumber; i += step) {
