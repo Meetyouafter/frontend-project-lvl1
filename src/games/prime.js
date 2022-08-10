@@ -12,7 +12,7 @@ const isPrimeNumber = (number) => {
   return true;
 };
 
-const getLogicForPrimeGame = () => {
+const getQuestionAndAnswerForGame = () => {
   const numberForQuestion = getRandomNumber(0, 100);
   const rightAnswer = isPrimeNumber(numberForQuestion) ? 'yes' : 'no';
 
@@ -20,7 +20,7 @@ const getLogicForPrimeGame = () => {
 };
 
 const startPrimeGame = () => {
-  initGame(description, getLogicForPrimeGame);
+  initGame(description, getQuestionAndAnswerForGame);
 };
 
 export default startPrimeGame;

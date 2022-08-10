@@ -5,16 +5,16 @@ const description = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 const isEvenNumber = (randomNumber) => randomNumber % 2 === 0;
 
-const getLogicForEvenGame = () => {
-  const secretNumber = getRandomNumber(0, 100);
+const getQuestionAndAnswerForGame = () => {
+  const numberForGame = getRandomNumber(0, 100);
 
-  const rightAnswer = isEvenNumber(secretNumber) ? 'yes' : 'no';
+  const rightAnswer = isEvenNumber(numberForGame) ? 'yes' : 'no';
 
-  return [secretNumber, rightAnswer];
+  return [numberForGame, rightAnswer];
 };
 
 const startEvenGame = () => {
-  initGame(description, getLogicForEvenGame);
+  initGame(description, getQuestionAndAnswerForGame);
 };
 
 export default startEvenGame;

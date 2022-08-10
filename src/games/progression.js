@@ -3,29 +3,30 @@ import getRandomNumber from '../helper.js';
 
 const description = 'What number is missing in the progression?';
 
-const getProgression = (length) => {
-  const sum = [];
-  const firstNumber = getRandomNumber(0, length);
-  const step = getRandomNumber(1, length);
+const getProgression = () => {
+  const progressionLength = getRandomNumber(5, 10);
+  const progression = [];
+  const firstNumber = getRandomNumber(0, progressionLength);
+  const step = getRandomNumber(1, progressionLength);
   const lastNumber = firstNumber + getRandomNumber(5, 10) * step;
 
   for (let i = firstNumber; i <= lastNumber; i += step) {
-    sum.push(i);
+    progression.push(i);
   }
-  return sum;
+  return progression;
 };
 
-const hideRandomArrayElement = (progressionArray) => {
-  const progressionArraywithHideElement = [...progressionArray];
-  const index = Math.floor(Math.random() * (progressionArray.length - 1));
-  progressionArraywithHideElement[index] = '..';
+const hideRandomElement = (progression) => {
+  const progressionWithHiddenElement = [...progression];
+  const index = Math.floor(Math.random() * (progression.length - 1));
+  progressionWithHiddenElement[index] = '..';
 
-  return [progressionArraywithHideElement, String(progressionArray[index])];
+  return [progressionWithHiddenElement, String(progression[index])];
 };
 
-const getLogicForProgressionGame = () => {
-  const progression = getProgression(getRandomNumber(5, 10));
-  const [progressionWithSecret, rightAnswer] = hideRandomArrayElement(progression);
+const getQuestionAndAnswerForGame = () => {
+  const progression = getProgression();
+  const [progressionWithSecret, rightAnswer] = hideRandomElement(progression);
 
   const question = progressionWithSecret.join(' ');
 
@@ -33,7 +34,7 @@ const getLogicForProgressionGame = () => {
 };
 
 const startProgressionGame = () => {
-  initGame(description, getLogicForProgressionGame);
+  initGame(description, getQuestionAndAnswerForGame);
 };
 
 export default startProgressionGame;

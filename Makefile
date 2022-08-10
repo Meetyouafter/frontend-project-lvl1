@@ -11,16 +11,16 @@ lint: #запуск линтера
 	npx eslint
 
 brain-even: 
-	node bin/brain-even.js
+	node bin/brainEven.js
 
 brain-calc: 
-	node bin/brain-calc.js
+	node bin/brainCalc.js
 
 brain-gsd: 
-	node bin/brain-gcd.js
+	node bin/brainGcd.js
 
 brain-prime:
-	node bin/brain-prime.js
+	node bin/brainPrime.js
 
 brain-progression: 
-	node bin/brain-progression.js
+	node bin/brainProgression.js

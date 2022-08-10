@@ -12,11 +12,11 @@ const executeMathExpression = (firstNumber, secondNumber, mathSign) => {
     case '*':
       return firstNumber * secondNumber;
     default:
-      return `${mathSign} - this mathsign doesn't use in this game`;
+      throw new Error(`${mathSign} - this mathsign doesn't use in this game`);
   }
 };
 
-const getLogicForCalculatorGame = () => {
+const getQuestionAndAnswerForGame = () => {
   const mathSign = ['+', '-', '*'];
   const randomMathSign = mathSign[getRandomNumber(0, 2)];
 
@@ -30,7 +30,7 @@ const getLogicForCalculatorGame = () => {
 };
 
 const startCalculatorGame = () => {
-  initGame(description, getLogicForCalculatorGame);
+  initGame(description, getQuestionAndAnswerForGame);
 };
 
 export default startCalculatorGame;
