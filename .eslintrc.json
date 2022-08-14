@@ -3,7 +3,7 @@
 
     "env": {
 
-        "browser": true,
+        "browser": false,
 
         "commonjs": true,
 
